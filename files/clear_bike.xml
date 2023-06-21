@@ -1,0 +1,36 @@
+<Entity tags="matter_eater">
+  
+	<MagicConvertMaterialComponent
+		from_material="tire_rubber"
+		to_material="air"
+		steps_per_frame="100"
+		loop="1"
+		is_circle="1"
+		radius="512" >
+	</MagicConvertMaterialComponent>
+	
+	<MagicConvertMaterialComponent
+		from_material="meat"
+		to_material="air"
+		steps_per_frame="100"
+		loop="1"
+		is_circle="1"
+		radius="512" >
+	</MagicConvertMaterialComponent>
+	
+	<MagicConvertMaterialComponent
+		from_material="rotten_meat"
+		to_material="air"
+		steps_per_frame="100"
+		loop="1"
+		is_circle="1"
+		radius="512" >
+	</MagicConvertMaterialComponent>
+	
+	<LifetimeComponent
+	lifetime="10">
+	</LifetimeComponent>
+
+
+</Entity>
+

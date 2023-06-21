@@ -1,0 +1,20 @@
+<Biome>
+  <Topology 
+    name="_EMPTY_"
+    background_image="data/weather_gfx/background_cave_02.png"
+    background_use_neighbor="0"
+    lua_script="mods/bike/files/biome.lua"
+    noise_type="SIN_CAPPED_SIMPLEX"
+    skip_edge_textures="1"
+    >
+  </Topology>
+
+
+  <Materials 
+    name="mountain" 
+     >
+    
+  </Materials>
+
+</Biome>
+

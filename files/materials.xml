@@ -1,0 +1,26 @@
+<Materials>
+
+  <CellData
+    name="tire_rubber"
+    ui_name="Tires"
+    tags="[box2d],[solid]"
+    burnable="0"
+    density="20"
+    cell_type="solid"
+    wang_color="ffb80905"
+    generates_smoke="0"
+    on_fire="0"
+    gfx_glow="0"
+    requires_oxygen="1"
+    solid_static_type="0"
+    solid_collide_with_self="0"
+    solid_friction="50"
+    stickyness="10"
+    platform_type="1"
+    hp="10000"
+    audio_physics_material_wall="cloth"
+    audio_physics_material_solid="cloth"
+    >
+  </CellData>
+
+</Materials>

@@ -1,0 +1,17 @@
+<Entity>
+
+<!--   <CollisionTriggerComponent
+    radius="32"
+    required_tag="player_unit"
+    destroy_this_entity_when_triggered="0"
+    remove_component_when_triggered="1"
+    >
+  </CollisionTriggerComponent> -->
+
+  <LuaComponent
+	script_source_file="mods/bike/files/goal.lua"
+    execute_every_n_frame="1"
+    >
+  </LuaComponent>
+
+</Entity>

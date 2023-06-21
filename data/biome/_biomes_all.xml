@@ -1,0 +1,24 @@
+<BiomesToLoad 
+	biome_image_map="data/biome_impl/biome_map.png"
+	biome_offset_y="10" >
+
+	<Biome 
+		biome_filename="mods/bike/files/biome.xml"
+		height_index="0"
+		color="ff3345a7"
+		>
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/solid_wall.xml" 
+		height_index="10"
+		color="ff3d3d3d" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/empty.xml" 
+		height_index="0"
+		color="ff48E311" >
+	</Biome>
+
+</BiomesToLoad>

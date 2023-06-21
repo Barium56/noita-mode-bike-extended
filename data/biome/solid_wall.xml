@@ -1,0 +1,33 @@
+<Biome>
+  <Topology 
+    name="_EMPTY_"
+    background_image="data/weather_gfx/background_cave_02.png"
+    background_use_neighbor="0"
+    lua_script="data/scripts/biomes/hills.lua"
+    noise_biome_edges="0"
+    skip_edge_textures="1"
+    has_rain="0"
+     >
+
+  </Topology>
+
+  <Materials 
+    name="solid_wall" 
+     >
+  
+    <MaterialComponent 
+      _enabled="1" 
+      is_rare="0" 
+      limit_max_y="2048" 
+      limit_min_y="100" 
+      limit_y="0" 
+      material_index="10" 
+      material_max="100" 
+      material_min="-100.0" 
+      material_name="rock_hard" 
+      >
+    </MaterialComponent>
+
+  </Materials>
+
+</Biome>

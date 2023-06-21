@@ -1,0 +1,333 @@
+<Entity 
+  name="DEBUG_NAME:player"
+  tags="mortal,human,hittable,peasant,prey,player_unit,teleportable" >
+
+  <Entity name="inventory_quick">
+  </Entity>
+
+  <Entity name="inventory_full"/>
+
+  <Inventory2Component
+    quick_inventory_slots="10"
+    full_inventory_slots_x="16"
+    full_inventory_slots_y="1">
+  </Inventory2Component>
+
+  <InventoryGuiComponent />
+
+  <HotspotComponent
+    _tags="hand"
+    transform_with_scale="0"
+    >
+  </HotspotComponent>
+
+  <HotspotComponent
+    _tags="cape"
+    transform_with_scale="0"
+    >
+  </HotspotComponent>
+
+  <Entity>  
+        <VerletPhysicsComponent
+    	num_points="150"
+        width="10"
+        type="CLOTH"
+    	stiffness="1.5"
+    	velocity_dampening="0.55"
+        resting_distance="1.0"
+        simulate_wind="1"
+    	constrain_stretching="1"
+    	collide_with_cells="1"
+    	mass_min="0.1"
+    	mass_max="0.2"
+        cloth_sprite_z_index="0.7" >
+    </VerletPhysicsComponent>
+        <!-- only_position="1" -->
+        <!-- parent_hotspot_tag="cape" -->
+      <InheritTransformComponent
+      
+        >
+        <Transform
+        position.x="-2"
+        position.y="-9"
+          >
+        </Transform>
+      </InheritTransformComponent>
+    
+  </Entity>
+
+  <PathFindingGridMarkerComponent
+    player_marker_radius="100.0"
+    marker_offset_y="-3"
+    marker_work_flag="8" >
+  </PathFindingGridMarkerComponent>
+
+  <GenomeDataComponent 
+    herd_id="player"
+    food_chain_rank="20"
+    is_predator="1" >
+  </GenomeDataComponent>
+
+  <ControlsComponent 
+    enabled="1" 
+    gamepad_fire_on_thumbstick_extend="0"
+    gamepad_fire_on_thumbstick_extend_threshold="0.9"
+    gamepad_indirect_aiming_enabled="0"
+    >
+  </ControlsComponent>
+  
+  <DamageModelComponent 
+    air_in_lungs="7" 
+    air_in_lungs_max="7" 
+    air_lack_of_damage="0.6" 
+    air_needed="1" 
+    falling_damage_damage_max="1.2" 
+    falling_damage_damage_min="0.1" 
+    falling_damage_height_max="250" 
+    falling_damage_height_min="70" 
+    falling_damages="0" 
+    fire_damage_amount="0.2" 
+    fire_probability_of_ignition="1" 
+    invincibility_frames="60"
+    hp="4" 
+    is_on_fire="0" 
+    materials_damage="1" 
+    materials_that_damage="acid,lava,blood_cold_vapour,blood_cold,poison,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed"  
+    materials_how_much_damage="0.005,0.003,0.0006,0.0009,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005" 
+    ragdoll_filenames_file=""
+    ragdoll_offset_y="-5"
+    minimum_knockback_force="10000000"
+    ragdollify_child_entity_sprites="0"
+    blood_spray_material="blood"
+    physics_objects_damage="0"
+    critical_damage_resistance="1"
+    >
+    <damage_multipliers
+      explosion="0.35" >
+    </damage_multipliers>
+  </DamageModelComponent>
+
+  <HitboxComponent 
+    aabb_min_x="-4" 
+    aabb_max_x="4" 
+    aabb_min_y="-4" 
+    aabb_max_y="4" 
+    is_enemy="0" 
+    is_item="0" 
+    is_player="1" >
+  </HitboxComponent>
+
+  <SpriteAnimatorComponent>
+  </SpriteAnimatorComponent>
+
+  <SpriteComponent 
+    _tags="aiming_reticle" 
+    alpha="1" 
+    image_file="data/ui_gfx/mouse_cursor.png"
+    ui_is_parent="0" 
+    offset_x="-60" 
+    offset_y="6" 
+    has_special_scale="1"
+    special_scale_x="1"
+    special_scale_y="1"
+    z_index="-10000"
+    emissive="1" >
+  </SpriteComponent>
+
+  <SpriteStainsComponent>
+  </SpriteStainsComponent>
+
+  <StatusEffectDataComponent>
+  </StatusEffectDataComponent>
+
+  <AudioComponent
+    file="data/audio/Desktop/player.snd"
+    event_root="player"
+    audio_physics_material="character_player"
+    set_latest_event_position="1" >
+  </AudioComponent>
+
+  <AudioLoopComponent
+    _tags="sound_jetpack"
+    _enabled="1"
+    file="data/audio/Desktop/player.snd"
+    event_name="player/jetpack"
+    volume_autofade_speed="0.25"
+    auto_play="1">
+  </AudioLoopComponent>
+
+  <AudioLoopComponent
+      file="data/audio/Desktop/projectiles.snd"
+      event_name="projectiles/rocket_passby"
+      auto_play="1">
+  </AudioLoopComponent>
+
+  <AudioLoopComponent
+    _tags="sound_underwater"
+    file="data/audio/Desktop/player.snd"
+    event_name="player/underwater"
+    volume_autofade_speed="0.25" >
+  </AudioLoopComponent>
+
+  <AudioLoopComponent
+    _tags="sound_suffocating"
+    file="data/audio/Desktop/player.snd"
+    event_name="player/suffocating"
+    volume_autofade_speed="0.25" >
+  </AudioLoopComponent>
+
+  <AudioLoopComponent
+    _tags="sound_pick_gold_sand"
+    file="data/audio/Desktop/player.snd"
+    event_name="player/pick_gold_sand"
+    volume_autofade_speed="0.05" >
+  </AudioLoopComponent>
+
+  <AudioListenerComponent
+    z="-60">
+  </AudioListenerComponent>
+  
+  <GunComponent>
+  </GunComponent>
+
+  <LiquidDisplacerComponent
+      radius="1">
+  </LiquidDisplacerComponent>
+
+  <ItemPickUpperComponent>
+  </ItemPickUpperComponent>
+
+  <GameLogComponent
+    report_damage="0"
+    report_death="1"
+    >
+  </GameLogComponent>
+
+  <!-- This disables death counting -->
+  <GameStatsComponent is_player="0" />
+
+  <LightComponent 
+    r="255"
+    g="255"
+    b="255"
+    radius="350"
+    fade_out_time="5.0"
+    >
+  </LightComponent>
+
+  <WalletComponent />
+
+  <StreamingKeepAliveComponent />
+  
+  <KickComponent />
+  
+  <IngestionComponent/>
+
+	<VariableStorageComponent
+		name="ocarina"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+  <LuaComponent
+    script_source_file="mods/bike/files/controls.lua"
+    execute_every_n_frame="1"
+    >
+  </LuaComponent>
+
+  <!-- <CharacterPlatformingComponent />
+
+  <CharacterDataComponent />
+
+  <PlatformShooterPlayerComponent /> -->
+
+  <!-- <GameEffectComponent 
+    effect="REMOVE_FOG_OF_WAR"
+    frames="-1"
+    >
+	</GameEffectComponent > -->
+
+  <SpriteComponent
+    image_file="mods/bike/files/player.png"
+    offset_x="3"
+    offset_y="15"
+    z_index="-3"
+    >
+  </SpriteComponent>
+
+    <PhysicsBody2Component 
+        allow_sleep="1" 
+        linear_damping="0.1" 
+        angular_damping="0.5"
+        kill_entity_after_initialized="0"
+    ></PhysicsBody2Component>
+
+    <PhysicsImageShapeComponent 
+        body_id="1"
+        centered="1"
+        is_root="1"
+        image_file="mods/bike/files/bike.png"
+        material="tire_rubber"
+    ></PhysicsImageShapeComponent>
+
+    <PhysicsImageShapeComponent 
+        body_id="2"
+        centered="1"
+        is_circle="1"
+        image_file="mods/bike/files/wheel_left.png"
+        z="-1"
+        material="tire_rubber"
+    ></PhysicsImageShapeComponent>
+
+    <PhysicsImageShapeComponent 
+        body_id="3"
+        centered="1"
+        is_circle="1"
+        image_file="mods/bike/files/wheel_right.png"
+        z="-1"
+        material="tire_rubber"
+    ></PhysicsImageShapeComponent>
+
+    <PhysicsJoint2Component 
+        type="REVOLUTE_JOINT"
+        break_force="20"
+        body1_id="1"
+        body2_id="3"
+        offset_x="5"
+        offset_y="1"
+    ></PhysicsJoint2Component>
+
+    <PhysicsJoint2Component 
+        type="REVOLUTE_JOINT"
+        break_force="20"
+        body1_id="1"
+        body2_id="2"
+        offset_x="-7"		
+        offset_y="1"
+    ></PhysicsJoint2Component>
+
+
+
+
+
+
+
+  <PhysicsJoint2MutatorComponent
+    joint_id="0"
+    motor_speed="0"
+    motor_max_torque="100"
+    >
+  </PhysicsJoint2MutatorComponent>
+
+  <LuaComponent
+    script_source_file="mods/bike/files/controls.lua"
+    execute_every_n_frame="1"
+    >
+  </LuaComponent>
+
+
+
+
+
+
+</Entity>
